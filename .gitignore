@@ -14,9 +14,5 @@ __pycache__/
 runs/
 
 # Local review and backup documents
-CPE663-Major-Assignment-Transformer-Lab-Walkthrough.docx
 report.docx
-report_before_*.docx
-report_review_highlighted.docx
-report_unopenable_review.docx
-report_compact.docx
+NO_USE/
