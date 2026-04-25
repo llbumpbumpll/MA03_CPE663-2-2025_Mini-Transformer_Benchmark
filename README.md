@@ -19,6 +19,33 @@ This project implements a mini Transformer encoder from scratch for the CPE663 m
 
 The implementation uses PyTorch tensors and common layers such as `nn.Linear`, `nn.Embedding`, `nn.LayerNorm`, and `nn.Dropout`, but it does not use `torch.nn.Transformer`, `torch.nn.MultiheadAttention`, Hugging Face models, or pretrained Transformers.
 
+## Project Structure
+
+```text
+MJA3/
+|-- data/
+|   |-- train.csv
+|   |-- validation.csv
+|   `-- test.csv
+|-- NO_USE/
+|   |-- CPE663-Major-Assignment-Transformer-Lab-Walkthrough.docx
+|   `-- report backup files
+|-- runs/
+|   |-- benchmark_results.csv
+|   |-- benchmark_summary.json
+|   |-- training_curves.png
+|   |-- training_loss_log_curves.png
+|   `-- <variant folders with history/result/model files>
+|-- benchmark.py
+|-- data.py
+|-- model.py
+|-- README.md
+|-- report.pdf
+|-- requirements.txt
+|-- train.py
+`-- utils.py
+```
+
 ## Task Description
 
 Each input sequence contains tokens from the vocabulary `PAD`, `A`, `B`, `C`, and `D`. The valid sequence length is between 6 and 20 tokens, and shorter sequences are padded to length 20.
@@ -39,12 +66,13 @@ Label: 1
 
 ## Files
 
+- `data/`: dataset folder containing `train.csv`, `validation.csv`, and `test.csv`.
 - `data.py`: CSV dataset loader and dataloader helpers.
 - `model.py`: from-scratch mini Transformer encoder components.
 - `train.py`: single-model training and evaluation script.
 - `benchmark.py`: required benchmark across four model variants and figure generation.
 - `utils.py`: reproducibility and metric helpers.
-- `train.csv`, `validation.csv`, `test.csv`: provided dataset splits.
+- `NO_USE/`: files kept for reference only and not used in the main workflow.
 - `report.pdf`: report submitted for the assignment.
 
 ## Run
@@ -58,19 +86,19 @@ pip install -r requirements.txt
 Train one model:
 
 ```powershell
-python train.py --epochs 10 --num-heads 4 --num-layers 1
+python train.py --train-csv data/train.csv --validation-csv data/validation.csv --test-csv data/test.csv --epochs 10 --num-heads 4 --num-layers 1
 ```
 
 Run the full benchmark:
 
 ```powershell
-python benchmark.py --epochs 10 --quiet
+python benchmark.py --train-csv data/train.csv --validation-csv data/validation.csv --test-csv data/test.csv --epochs 10 --quiet
 ```
 
 For a quicker smoke test:
 
 ```powershell
-python benchmark.py --epochs 1 --quiet
+python benchmark.py --train-csv data/train.csv --validation-csv data/validation.csv --test-csv data/test.csv --epochs 1 --quiet
 ```
 
 ## Benchmark Variants

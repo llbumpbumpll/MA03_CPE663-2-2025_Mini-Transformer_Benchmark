@@ -144,9 +144,9 @@ def run_benchmark(args):
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Run the required mini Transformer benchmark.")
-    parser.add_argument("--train-csv", default="train.csv")
-    parser.add_argument("--validation-csv", default="validation.csv")
-    parser.add_argument("--test-csv", default="test.csv")
+    parser.add_argument("--train-csv", default="data/train.csv")
+    parser.add_argument("--validation-csv", default="data/validation.csv")
+    parser.add_argument("--test-csv", default="data/test.csv")
     parser.add_argument("--output-dir", default="runs")
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=32)

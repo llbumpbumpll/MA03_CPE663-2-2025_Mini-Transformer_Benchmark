@@ -37,9 +37,9 @@ class CSVDataset(Dataset):
 
 
 def create_dataloaders(
-    train_csv="train.csv",
-    validation_csv="validation.csv",
-    test_csv="test.csv",
+    train_csv="data/train.csv",
+    validation_csv="data/validation.csv",
+    test_csv="data/test.csv",
     batch_size=32,
     num_workers=0,
 ):
