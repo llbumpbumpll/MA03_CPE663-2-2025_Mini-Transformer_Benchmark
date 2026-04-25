@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+.ipynb_checkpoints/
+
+# Temporary files created by Microsoft Office
+~$*.docx
+~$*.doc
+~$*.pptx
+~$*.xlsx
+
+# Generated benchmark outputs
+runs/
+
+# Local review and backup documents
+CPE663-Major-Assignment-Transformer-Lab-Walkthrough.docx
+report.docx
+report_before_*.docx
+report_review_highlighted.docx
+report_unopenable_review.docx
+report_compact.docx
